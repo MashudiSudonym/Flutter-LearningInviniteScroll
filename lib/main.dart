@@ -23,9 +23,9 @@ class RandomWords extends StatefulWidget {
 }
 
 class _RandomWordsState extends State<RandomWords> {
-  final List<WordPair> _suggestions = <WordPair>[];
-  final Set<WordPair> _saved = Set<WordPair>();
-  final TextStyle _biggerFont = const TextStyle(fontSize: 18.0);
+  final List<WordPair> _suggestions = <WordPair>[]; // random word collection
+  final Set<WordPair> _saved = Set<WordPair>(); // favorite collection
+  final TextStyle _biggerFont = const TextStyle(fontSize: 18.0); // universal text style for this app
 
   @override
   Widget build(BuildContext context) {
@@ -34,16 +34,18 @@ class _RandomWordsState extends State<RandomWords> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text("Random Text Generator"),
+        title: Text("Random Text Generator"), // app bar title
         elevation: 0.0, // remove shadow from app bar
         actions: <Widget>[
-          IconButton(icon: Icon(Icons.list), onPressed: _pushSaved),
+          IconButton(icon: Icon(Icons.list), onPressed: _pushSaved), // set app bar icon and added action
         ],
       ),
-      body: _buildSuggestions(),
+      body: _buildSuggestions(), // body full using list view (like recycler view in android native layout)
     );
   }
 
+  // this widget like recycler view adapter, item view xml in android native
+  // add data in this widget
   Widget _buildSuggestions() {
     return ListView.builder(
       padding: const EdgeInsets.all(16.0),
