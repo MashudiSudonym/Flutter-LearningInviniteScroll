@@ -62,6 +62,7 @@ class _RandomWordsState extends State<RandomWords> {
     );
   }
 
+  // this widget is content of list view, just show text widget
   Widget _buildRow(WordPair pair) {
     final bool alreadySaved = _saved.contains(pair);
 
@@ -86,6 +87,7 @@ class _RandomWordsState extends State<RandomWords> {
     );
   }
 
+  // function for open favorite page
   void _pushSaved() {
     Navigator.of(context).push(
       MaterialPageRoute<void>(
